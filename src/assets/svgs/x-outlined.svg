@@ -1,0 +1,15 @@
+<svg
+  width="100"
+  height="100"
+  viewBox="0 0 100 100"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M28 20L50 42L72 20L80 28L58 50L80 72L72 80L50 58L28 80L20 72L42 50L20 28L28 20Z"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+</svg>

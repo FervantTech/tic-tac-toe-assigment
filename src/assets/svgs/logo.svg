@@ -14,7 +14,7 @@
      id="layer1"
      transform="translate(0,-229.26665)">
     <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2.5;stroke-dasharray:none;stroke-opacity:0.95067264;paint-order:stroke fill markers"
+       style="opacity:1;fill:transparent;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2.5;stroke-dasharray:none;stroke-opacity:0.95067264;paint-order:stroke fill markers"
        d="m 11.73729,229.266
        65 44.258749,0 c 6.502459,0 11.737291,5.23483 11.737291,11.73729 l 0,44.25875 c 0,6.50246 -5.234832,11.73729 -11.737291,11.73729 l -44.258749,0 C 5.2348315,296.99998 0,291.76515 0,285.26269 l 0,-44.25875 c 0,-6.50246 5.2348315,-11.73729 11.73729,-11.73729 z"
        id="rect1366"
