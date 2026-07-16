@@ -20,7 +20,7 @@ div{
     width: 10rem;
     height: 10rem;
 
-    filter: ${(props) => props.isPlayerActive ? "" : 'grayscale(90%) '};
+    filter: ${(props) => props.isPlayerActive ? "" : 'grayscale(100%) '};
 
 
     ${((props) => props.theme.media.mobile)}{

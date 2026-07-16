@@ -8,19 +8,26 @@ import { ReactComponent as IconO } from "../../assets/svgs/o.svg";
 import { ReactComponent as IconOOutline } from "../../assets/svgs/o-outlined.svg";
 import { ModalContext } from "../../contexts/ModalContext";
 import { RoundOverModal } from "../Modal/RoundOverModal/RoundOverModal";
+import { SoundEffectsContext } from "../../contexts/SoundEffectsContext";
 
 function GameCell({ cellItem, index }) {
   const { updateBoard, game, roundComplete } = useContext(GameContext);
-  const {handleModal} = useContext(ModalContext);
-
+  const { handleModal } = useContext(ModalContext);
+  const { hoverSfx, clickedSfx, winnerSfx, completedSfx } =
+    useContext(SoundEffectsContext);
   const cellClickHandler = () => {
     updateBoard(index);
-     const result = checkForWinner(game.board)
-    if(result){
+    const result = checkForWinner(game.board);
+    if (result) {
       roundComplete(result);
-      handleModal(<RoundOverModal />)
+      if (result !== "draw") {
+        winnerSfx();
+      } else {
+        completedSfx();
+      }
+      handleModal(<RoundOverModal />);
     }
-    
+
     if (cellItem === "x") {
       return (
         <CellStyle>
@@ -38,19 +45,25 @@ function GameCell({ cellItem, index }) {
 
   <CellStyle></CellStyle>;
 
- return (
-  <CellStyle onClick={cellClickHandler}>
-    {cellItem === "x" ? (
-      <IconX />
-    ) : cellItem === "o" ? (
-      <IconO />
-    ) : game.turn === "x" ? (
-      <IconXOutline  className="outlineIcon"/>
-    ) : (
-      <IconOOutline  className="outlineIcon"/>
-    )}
-  </CellStyle>
-);
+  return (
+    <CellStyle
+      onClick={() => {
+        clickedSfx();
+        cellClickHandler()
+      }}
+      onMouseEnter={() => hoverSfx()}
+    >
+      {cellItem === "x" ? (
+        <IconX />
+      ) : cellItem === "o" ? (
+        <IconO />
+      ) : game.turn === "x" ? (
+        <IconXOutline className="outlineIcon" />
+      ) : (
+        <IconOOutline className="outlineIcon" />
+      )}
+    </CellStyle>
+  );
 }
 
 export default GameCell;
