@@ -6,6 +6,7 @@ import Details from './pages/Details/Details';
 import Header from './components/Header/Header';
 import { ModalContextProvider } from "./contexts/ModalContext";
 
+
 function Router() {
 
   return (
