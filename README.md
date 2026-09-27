@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Tic Tac Toe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Two players. Ten seconds. Three in a row.
 
-## Available Scripts
+A personalised React tic tac toe project built from a Zaio lesson, with a black-and-blue theme, player names and timed turns.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Two players on one device, with Player 1 and Player 2 as default names.
+- Random avatars generated when the app loads.
+- A ten-second turn timer. Running out of time switches the turn without placing a mark.
+- Row, column and diagonal wins, draw detection and blocked invalid moves.
+- One point for a win, or half a point each for a draw.
+- Continue starts another round, keeps scores and swaps X/O assignments.
+- Restart clears the board and scores, keeps player names and returns to the home page.
+- Responsive layouts, light/dark mode and optional music controls.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Run locally
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```sh
+npm install
+npm start
+```
 
-### `npm test`
+## Checks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm test -- --watchAll=false --runInBand
+npm run build
+```
 
-### `npm run build`
+## State management
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`src/contexts/GameContext.js` shares game state through Context and the `useGame` hook.
+`src/reducers/gameReducer.js` handles `SET_PLAYER_NAMES`, `MAKE_MOVE`, `TICK`, `RESET_ROUND` and `RESTART_GAME`.
+The game page runs the timer while a round is active. The reducer updates the board, result, scores and current player.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credits and development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The original app was built by following a Zaio lesson. Restart and scoring were originally implemented by me without AI. AI later assisted with reducer integration, gameplay fixes, the timer, responsive styling and personalisation.
 
-### `npm run eject`
+Avatars use `react-nice-avatar`. The existing music playlist is retained. Game sound effects have been removed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Submission checklist
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Publish the latest code to GitHub.
+- [ ] Deploy to Netlify or Vercel and verify direct links and refreshes work.
+- [ ] Add the live site link here.
+- [ ] Record a Loom under four minutes with face cam, a win and draw, the manual features, reducer explanation and timer demo.
+- [ ] Add the Loom link here.

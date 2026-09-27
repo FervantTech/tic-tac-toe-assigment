@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const ButtonWrapper = styled.button`
-color : ${(props) => props.theme.colors.primary};
-background-color : ${(props) => props.color? props.color:   props.theme.colors.secondary};
+color : ${(props) => props.theme.colors.white};
+background-color : ${(props) => props.color ? props.color : "#2563EB"};
 padding: 20px 30px;
 min-width: 300px;
 font-size: 1.5rem;
 margin: 20px;
 border: none;
 border-radius: 10px;
-font-weight: 400;
+font-weight: 600;
 
 
 &:hover{

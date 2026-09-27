@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/Global.styled";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { ThemeContext } from "./contexts/ThemeContext";
+
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 
 function App() {
@@ -16,7 +17,7 @@ const mode = (theme === "light" ? lightTheme: darkTheme)
       <GlobalStyle />
 
       <Router />
-    <MusicPlayer/>
+      <MusicPlayer />
     </ThemeProvider>
   );
 }

@@ -1,32 +1,26 @@
 import styled from "styled-components";
 
 export const CellStyle = styled.button`
-  background-color: ${(props) => props.theme.colors.secondary};
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 3rem;
+  display: grid;
+  place-items: center;
+  background-color: ${(props) => props.$isWinningCell ? props.theme.colors.yellow : props.theme.colors.board};
+  color: ${(props) => props.$isWinningCell ? "#080D16" : props.theme.colors.white};
   border: none;
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1;
   border-radius: 10px;
-  box-shadow: 5px 10px ${(props) => props.theme.colors.cream};
-
-  .outlineIcon {
-    path {
-      stroke-width: 0;
-    }
-    circle {
-      stroke-width: 0;
-      transition: stroke-width 0.2s ease;
-    }
-  }
-
-  &:hover {
+  box-shadow: 3px 6px ${(props) => props.theme.colors.cream};
+  svg { width: 55%; height: 55%; }
+  .outlineIcon { opacity: 0; }
+  &:enabled:hover {
     cursor: pointer;
-    path {
-      stroke-width: 2;
-    }
-    circle {
-      stroke-width: 3;
-    }
+    .outlineIcon { opacity: 1; }
   }
+  &:focus-visible {
+    outline: 3px solid ${(props) => props.theme.colors.purple};
+    outline-offset: 3px;
+    .outlineIcon { opacity: 1; }
+  }
+  &:disabled { cursor: default; opacity: 1; }
 `;

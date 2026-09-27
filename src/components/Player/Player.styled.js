@@ -1,31 +1,20 @@
 import styled from "styled-components";
 
-
 export const PlayerWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: 6rem;
-/* background-color: ${({isPlayerActive}) => isPlayerActive? "yellow" : "grey"}; */
-  ${((props) => props.theme.media.mobile)}{
-  flex-direction: row;
-  margin: 4rem;
-}
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+  h1 { font-size: clamp(1rem, 2vw, 1.5rem); overflow-wrap: anywhere; }
+`;
 
 export const AvatarWrapper = styled.div`
-div{
+  div {
     display: flex;
-    width: 10rem;
-    height: 10rem;
-
-    filter: ${(props) => props.isPlayerActive ? "" : 'grayscale(100%) '};
-
-
-    ${((props) => props.theme.media.mobile)}{
-    width: 8rem;
-    height: 8rem;
-}
-}
-` 
+    width: clamp(4rem, 12vw, 10rem);
+    height: clamp(4rem, 12vw, 10rem);
+    filter: ${(props) => props.$isPlayerActive ? "none" : "grayscale(100%)"};
+  }
+`;
